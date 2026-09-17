@@ -1,4 +1,6 @@
-import os
+from http.server import HTTPServer, BaseHTTPRequestHandler
+import threading
+ import os
 import asyncio
 import random
 import sqlite3
@@ -746,5 +748,20 @@ async def help(ctx, category: str = None):
 
     await ctx.send(embed=embed)
 
+# --- DUMMY WEB SERVER FOR RENDER ---
+class SimpleHandler(BaseHTTPRequestHandler):
+
+  def do_GET(self):
+    self.send_response(200)
+    self.end_headers()
+    self.wfile.write(b"CHOCO Bot is alive!")
+
+
+def run_server():
+  server = HTTPServer(("0.0.0.0", 10000), SimpleHandler)
+  server.serve_forever()
+
+
+threading.Thread(target=run_server, daemon=True).start()
 
 bot.run(os.environ.get("BOT_TOKEN"))
