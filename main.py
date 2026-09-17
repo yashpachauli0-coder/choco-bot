@@ -619,7 +619,10 @@ async def avatar(ctx, target: discord.Member = None):
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send(f"🏓 Pong! Latency: **{round(bot.latency * 1000)}ms**")
+  await ctx.send(
+      f"<:choco_hi:1549788844470182029> 🏓 Pong! Latency:"
+      f" **{round(bot.latency * 1000)}ms**"
+  )
 
 
 @bot.command()
