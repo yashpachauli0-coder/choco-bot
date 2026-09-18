@@ -119,7 +119,7 @@ async def help(ctx):
     )
     
     view = HelpView()
-    view.add_item(discord.ui.Button(label="Support Server", style=discord.ButtonStyle.link, url="https://discord.gg/yourserver", emoji="🛟"))
+    view.add_item(discord.ui.Button(label="Support Server", style=discord.ButtonStyle.link, url="https://discord.gg/3FpFFxagXP", emoji="🛟"))
     view.add_item(discord.ui.Button(label="Vote Bot", style=discord.ButtonStyle.link, url="https://top.gg", emoji="⭐"))
     
     await ctx.send(embed=embed, view=view)
