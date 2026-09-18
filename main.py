@@ -21,6 +21,7 @@ threading.Thread(target=run_server, daemon=True).start()
 intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="C", intents=intents)
+bot.remove_command("help")
 
 EMBED_COLOR = 0xFF69B4  # Hot Pink & Golden Theme
 
